@@ -1,0 +1,80 @@
+2016-02-01 21:54:47 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TICKET" not found; SQL statement:
+/* insert com.newsWeaver.lotery.model.Ticket */ insert into Ticket (id, DATA) values (null, ?) [42102-190]
+2016-02-01 21:54:47 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TICKET" not found; SQL statement:
+/* insert com.newsWeaver.lotery.model.Ticket */ insert into Ticket (id, DATA) values (null, ?) [42102-190]
+2016-02-01 22:20:04 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TICKET" not found; SQL statement:
+/* insert com.newsWeaver.lotery.model.Ticket */ insert into Ticket (id, DATA) values (null, ?) [42102-190]
+2016-02-01 22:20:04 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TICKET" not found; SQL statement:
+/* insert com.newsWeaver.lotery.model.Ticket */ insert into Ticket (id, DATA) values (null, ?) [42102-190]
+2016-02-01 22:27:22 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TICKET" not found; SQL statement:
+/* insert com.newsWeaver.lotery.model.Ticket */ insert into Ticket (id, DATA) values (null, ?) [42102-190]
+2016-02-01 22:27:22 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "TICKET" not found; SQL statement:
+/* insert com.newsWeaver.lotery.model.Ticket */ insert into Ticket (id, DATA) values (null, ?) [42102-190]
+2016-02-01 23:30:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "DATABASECHANGELOGLOCK" not found; SQL statement:
+select count(*) from PUBLIC.DATABASECHANGELOGLOCK [42102-190]
+2016-02-03 21:05:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "DATABASECHANGELOGLOCK" not found; SQL statement:
+select count(*) from PUBLIC.DATABASECHANGELOGLOCK [42102-190]
+2016-02-03 21:06:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "DATABASECHANGELOGLOCK" not found; SQL statement:
+select count(*) from PUBLIC.DATABASECHANGELOGLOCK [42102-190]
+2016-02-03 21:21:29 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:C:/newsWeaver/DWGettingStarted/target/example.mv.db [1.4.190/7]" [50000-190]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:94)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:373)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:356)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2888)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:154)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:99)
+	at org.h2.engine.Database.getPageStore(Database.java:2450)
+	at org.h2.engine.Database.open(Database.java:672)
+	at org.h2.engine.Database.openDatabase(Database.java:269)
+	at org.h2.engine.Database.<init>(Database.java:263)
+	at org.h2.engine.Engine.openSession(Engine.java:65)
+	at org.h2.engine.Engine.openSession(Engine.java:175)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:153)
+	at org.h2.engine.Engine.createSession(Engine.java:136)
+	at org.h2.engine.Engine.createSession(Engine.java:28)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:349)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:107)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:72)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:307)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:200)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:708)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:642)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:464)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:141)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:115)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:102)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:126)
+	at io.dropwizard.migrations.CloseableLiquibase.<init>(CloseableLiquibase.java:19)
+	at io.dropwizard.migrations.AbstractLiquibaseCommand.openLiquibase(AbstractLiquibaseCommand.java:75)
+	at io.dropwizard.migrations.AbstractLiquibaseCommand.run(AbstractLiquibaseCommand.java:60)
+	at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:77)
+	at io.dropwizard.cli.Cli.run(Cli.java:70)
+	at io.dropwizard.Application.run(Application.java:80)
+	at com.newsWeaver.ticket.LoteryApllication.main(LoteryApllication.java:29)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:C:/newsWeaver/DWGettingStarted/target/example.mv.db [1.4.190/7]" [50000-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 37 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/newsWeaver/DWGettingStarted/target/example.mv.db [1.4.190/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:773)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:342)
+	... 32 more
+2016-02-03 21:21:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "DATABASECHANGELOGLOCK" not found; SQL statement:
+select count(*) from PUBLIC.DATABASECHANGELOGLOCK [42102-190]
+2016-02-03 21:23:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "DATABASECHANGELOGLOCK" not found; SQL statement:
+select count(*) from PUBLIC.DATABASECHANGELOGLOCK [42102-190]
