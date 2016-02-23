@@ -61,6 +61,7 @@ public class Controler {
 	
 	@javax.ws.rs.GET
     @Path("/{id}")
+	@UnitOfWork
     public TicketDto getTickets(@PathParam("id") String ticketId) {
         return ticketService.getTickets(ticketId);
     }	
