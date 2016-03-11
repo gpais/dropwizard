@@ -18,8 +18,8 @@ ADD target/LoteryApllication-1.0-SNAPSHOT.jar  /data/LoteryApllication-1.0-SNAPS
 
 ADD example.yml /data/example.yml
 
-RUN java -jar LoteryApllication-1.0-SNAPSHOT.jar db migrate /data/example.yml
+RUN java -jar LoteryApllication-1.0-SNAPSHOT.jar db migrate example.yml
 
-CMD java -jar LoteryApllication-1.0-SNAPSHOT.jar /data/example.yml
+CMD java -jar LoteryApllication-1.0-SNAPSHOT.jar example.yml
 
 EXPOSE 8080
