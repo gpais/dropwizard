@@ -20,6 +20,7 @@ ADD example.yml /data/example.yml
 
 RUN java -jar LoteryApllication-1.0-SNAPSHOT.jar db migrate example.yml
 
-CMD java -jar LoteryApllication-1.0-SNAPSHOT.jar example.yml
+CMD java -jar LoteryApllication-1.0-SNAPSHOT.jar server example.yml
 
 EXPOSE 8080
+
