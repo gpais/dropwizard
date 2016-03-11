@@ -14,12 +14,12 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 # Define working directory.
 WORKDIR /data
 
-ADD target/LoteryApllication-1.0-SNAPSHOT-javadoc.jar  /data/LoteryApllication-1.0-SNAPSHOT-javadoc.jar
+ADD target/LoteryApllication-1.0-SNAPSHOT.jar  /data/LoteryApllication-1.0-SNAPSHOT.jar
 
 ADD example.yml /data/example.yml
 
-RUN java -jar LoteryApllication-1.0-SNAPSHOT-javadoc.jar db migrate /data/example.yml
+RUN java -jar LoteryApllication-1.0-SNAPSHOT.jar db migrate /data/example.yml
 
-CMD java -jar LoteryApllication-1.0-SNAPSHOT-javadoc.jar /data/example.yml
+CMD java -jar LoteryApllication-1.0-SNAPSHOT.jar /data/example.yml
 
 EXPOSE 8080
